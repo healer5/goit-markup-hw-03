@@ -27,30 +27,58 @@ img{
 
 ul{
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-header{
-    border-bottom-width:1px;
-    border-bottom-style: solid; 
-    border-bottom-color: #ECECEC;
+.visually-hidden { 
+    position: absolute; 
+    width: 1px; 
+    height: 1px; 
+    margin: -1px; 
+    border: 0; 
+    padding: 0; 
+    white-space: nowrap; 
+    clip-path: inset(100%); 
+    clip: rect(0 0 0 0); 
+    overflow: hidden; 
 }
-/* Утилита */
-.list{
-    padding:0;
-    margin:0;
-} 
+
+/* Основной контейнер */
 .container{
-    width: 1230px;
+    width: 1200px;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Section */
+.section-title{
+    margin-top:0;
+    margin-bottom:50px;
+    color: var(--primary-text-color);
     
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.16;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+/* Header */
+header{
+    border-bottom:1px solid #ECECEC;
+        align-items: center;
+        margin-top: 0;
+    }
+.main-menu{
+    display: flex;
 }
 /* Logo */
 .logo{
+    display: block;
     margin-right: 93px;
-    padding: 25px 0;
+    padding: 24px 0 25px 0;
     color: var(--accent-color);
     font-family: Raleway, normal;
     font-size: 26px;
@@ -75,15 +103,16 @@ nav{
 
 .site-nav{
     display: flex;
+    margin:0; 
 }
 
-.site-nav .item:not(:last-child){
-    margin-right: 50px;
+.site-nav .item + .item {
+	margin-left: 50px;
 }
 
 .site-nav .list{
     display: block;
-
+    padding:32px 0;
     color: var(--primary-text-color);
     font-weight: 500;
     font-size: 14px;
@@ -100,8 +129,8 @@ nav{
     margin-left: auto;
 }
 
-.contact-nav .item + .item{
-    margin-left: 50px;
+.contact-nav .item:not(:last-child){
+    margin-right: 50px;
 }
 .site-nav .list.current,
 .contact-nav .list.current{
@@ -114,6 +143,9 @@ nav{
 }
 
 .contact-nav .list{
+    /* display: block; */
+    display: flex;
+    padding: 32px 0; 
     color: var(--secondary-text-color);
     font-weight: 500;
     font-size: 14px;
@@ -123,12 +155,17 @@ nav{
 
 /* Hero */
 .hero{
+        padding: 200px 0;
+        text-align: center;
+        
     background-color: var(--secondary-bg-color);
+    letter-spacing: 0.06em;
 }
 
 .hero-title {
     padding:0;
-    margin:0;
+    margin: 0 auto 30px auto;
+    width: 696px;
     color: var(--primary-bg-color);
     font-weight: 900;
     font-size: 44px;
@@ -168,45 +205,22 @@ nav{
     background-color:#188CE8;
 }
 
-/* Section */
-.section-title{
-    margin-top:0;
-    margin-bottom:50px;
-    color: var(--primary-text-color);
-    
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.16;
-    text-align: center;
-    letter-spacing: 0.03em;
-}
-
 /* Feature */
-.visually-hidden { 
-    position: absolute; 
-    width: 1px; 
-    height: 1px; 
-    margin: -1px; 
-    border: 0; 
-    padding: 0; 
-    white-space: nowrap; 
-    clip-path: inset(100%); 
-    clip: rect(0 0 0 0); 
-    overflow: hidden; 
-  }
-
 .feature{
-    padding:94px 0;
-} 
+    padding: 94px 0;
+}
 .feature-list{
     display: flex;
-    flex-wrap: wrap;
     margin: 0;
     padding:0;
 }
 
 .feature-list .item{
     width: 270px;
+    
+}
+.feature-list .item+ .item {
+margin-left: 30px;
 }
 
 .feature-list .title{
@@ -231,9 +245,10 @@ nav{
 }
 
 /* Чем занимашся */
+.profession{
+    padding-bottom: 94px;;
+}
 .profession ul{
-    margin: 0;
-    padding:0 0 94px 0;
     display:flex;
     flex-wrap: wrap;
 }
@@ -243,27 +258,40 @@ nav{
 }
 /* Our team */
 .team{
-    padding:94px 0;
-    background: #F5F4FA;
+    padding: 94px 0;
+    background-color: #F5F4FA;
 }
+        .team .container {
+            flex-direction: column;
+        }
 
 .team ul{
     display:flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    justify-content: space-evenly;
+    /* flex-wrap: wrap;
+    justify-content: space-evenly; */
 }
 
 .team-card{
     background: var(--primary-bg-color);
     width: 270px;
+        overflow: hidden;
+
 }
-/* .team-list .team-card:not(:last-child){
+.team-list .team-card:not(:last-child){
     margin-right: 30px;
-} */
+}
+
+.team-container{
+    padding: 30px 0;
+}
+.team-card{
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
 
 .team-card h3{
+    padding: 0;
+    margin: 0  0 10px 0;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.18;
@@ -273,6 +301,8 @@ nav{
 }
 
 .team-card p{
+    margin: 0;
+    padding: 0;
     font-size: 16px;
     line-height: 1.18;
     text-align: center;
@@ -307,10 +337,6 @@ footer{
     line-height: 1.19;
     font-weight: 700;
 }
-footer ul{
-    margin: 0;
-    padding: 0;
-}
 footer .list{
     color:rgba(255, 255, 255, 0.6);
     font-size: 14px;
@@ -329,14 +355,12 @@ address {
 /* Portfolio */
 /* Filtres */
 .filtres{
-    margin-top:94px;
-    margin-bottom: 50px;
+    padding-top: 94px  
 }
 .filtres ul{
     display: flex;
-    margin: 0;
-    padding:0;
     justify-content: center;
+    margin: 0 auto 50px;
 }
 
 .filtres .item:not(:last-child){
@@ -344,6 +368,8 @@ address {
 }
 
 .filtres button{
+    padding: 6px 22px;
+    border-radius: 4px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.62;
@@ -351,6 +377,8 @@ address {
     letter-spacing: 0.03em;
     color: var(--primary-text-color);
     font-family: inherit;
+    border-style: none;
+    cursor: pointer;
 }
 
 .filtres button:hover,
@@ -360,6 +388,9 @@ address {
 }
 
 /* Portfolio card */
+.portfolio-block{
+    padding-bottom: 94px;
+}
 .portfolio-list{
     display: flex;
     flex-wrap: wrap;
@@ -368,6 +399,7 @@ address {
     background: var(--primary-bg-color);
     margin-right: 30px;
     margin-bottom: 30px;
+    outline: 1px solid #EEEEEE;
 }
 
 .portfolio-card:nth-child(3n){
@@ -377,8 +409,13 @@ address {
 .portfolio-card:nth-last-child(-n+3){
     margin-bottom: 0;
 }
+.portfolio-description{
+    padding: 20px 24px;
+}
 
 .portfolio-card h2{
+    margin: 0;
+    padding: 0;
     font-weight: 700;
     font-size: 16px;
     line-height: 2;
@@ -387,6 +424,7 @@ address {
 }
 
 .portfolio-card p{
+    margin: 4px 0 0 0;
     font-size: 16px;
     line-height: 1.87;
     letter-spacing: 0.03em;
