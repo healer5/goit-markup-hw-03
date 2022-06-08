@@ -313,19 +313,13 @@ margin-left: 30px;
 /* Footer */
 
 footer{
+    padding: 60px 0;
     background-color: var(--secondary-bg-color);
 }
 .footer-icon{
-    display: flex;
-    padding-top:60px;
     padding-bottom: 20px;
 }
-.footer-nav{
-    padding-bottom: 60px;
-}
-.footer-nav .list:not(:last-child){
-    margin-bottom: 9px;
-}
+
 .half-logo-footer{
     color: var(--primary-bg-color);
 }
@@ -344,8 +338,12 @@ footer .list{
     letter-spacing: 0.03em;
 }
 
-footer .city{
+.footer-nav .city{
     color: var(--primary-bg-color);
+}
+
+footer li:not(:last-child){
+    margin-bottom: 9px;
 }
 
 address {
@@ -354,9 +352,6 @@ address {
 
 /* Portfolio */
 /* Filtres */
-.filtres{
-    padding-top: 94px  
-}
 .filtres ul{
     display: flex;
     justify-content: center;
@@ -389,7 +384,7 @@ address {
 
 /* Portfolio card */
 .portfolio-block{
-    padding-bottom: 94px;
+    padding: 94px 0;
 }
 .portfolio-list{
     display: flex;
